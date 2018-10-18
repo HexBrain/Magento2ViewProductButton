@@ -77,7 +77,7 @@ class ViewProductButton extends \Magento\Backend\Block\Widget\Container
     /**
      * Return product frontend url depends on active store
      *
-     * @return mixed
+     * @return string
      */
     protected function _getProductUrl()
     {
