@@ -3,7 +3,7 @@ namespace HexBrain\ProductView\Test\Unit\Block\Adminhtml\ViewButtonTest;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
-class ViewButtonTest extends \PHPUnit_Framework_TestCase
+class ViewButtonTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \HexBrain\ProductView\Block\Adminhtml\ViewProductButton
@@ -30,17 +30,17 @@ class ViewButtonTest extends \PHPUnit_Framework_TestCase
      */
     protected $emulationMock;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->productMock = $this->getMock('\Magento\Catalog\Model\Product', [], [], '', false);
+        $this->productMock = $this->createMock('\Magento\Catalog\Model\Product', [], [], '', false);
         $this->productMock->expects($this->any())->method('getId')->willReturn(1);
         $this->productMock->expects($this->any())->method('loadByAttribute')->willReturn($this->productMock);
         $this->productMock->expects($this->any())->method('getProductUrl')->willReturn('test');
 
-        $buttonList = $this->getMock('\Magento\Backend\Block\Widget\Button\ButtonList', [], [], '', false);
+        $buttonList = $this->createMock('\Magento\Backend\Block\Widget\Button\ButtonList', [], [], '', false);
         $buttonList->expects($this->once())->method('add')->willReturn(0);
 
-        $this->registryMock = $this->getMock('\Magento\Framework\Registry', [], [], '', false);
+        $this->registryMock = $this->createMock('\Magento\Framework\Registry', [], [], '', false);
         $this->registryMock->expects($this->any())->method('registry')->willReturn($this->productMock);
 
         $this->requestMock = $this->getMockForAbstractClass(
@@ -54,9 +54,9 @@ class ViewButtonTest extends \PHPUnit_Framework_TestCase
         );
         $this->requestMock->expects($this->any())->method('getParam')->willReturn(0);
 
-        $this->emulationMock = $this->getMock('\Magento\Store\Model\App\Emulation', [], [], '', false);
+        $this->emulationMock = $this->createMock('\Magento\Store\Model\App\Emulation', [], [], '', false);
 
-        $contextMock = $this->getMock('\Magento\Backend\Block\Widget\Context', [], [], '', false);
+        $contextMock = $this->createMock('\Magento\Backend\Block\Widget\Context', [], [], '', false);
         $contextMock->expects($this->any())->method('getRequest')->willReturn($this->requestMock);
         $contextMock->expects($this->any())->method('getButtonList')->willReturn($buttonList);
 
