@@ -1,32 +1,35 @@
 <?php
 namespace HexBrain\ProductView\Test\Unit\Block\Adminhtml\ViewButtonTest;
 
+use HexBrain\ProductView\Block\Adminhtml\ViewProductButton;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
+use PHPUnit\Framework\TestCase;
+use PHPUnit_Framework_MockObject_MockObject;
 
-class ViewButtonTest extends \PHPUnit\Framework\TestCase
+class ViewButtonTest extends TestCase
 {
     /**
-     * @var \HexBrain\ProductView\Block\Adminhtml\ViewProductButton
+     * @var ViewProductButton
      */
     protected $model;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var PHPUnit_Framework_MockObject_MockObject
      */
     protected $productMock;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var PHPUnit_Framework_MockObject_MockObject
      */
     protected $registryMock;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var PHPUnit_Framework_MockObject_MockObject
      */
     protected $requestMock;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var PHPUnit_Framework_MockObject_MockObject
      */
     protected $emulationMock;
 
